@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand />
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="baafc345-bf3d-4223-bd17-24f81f98f468" name="Default Changelist" comment="add form U D">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/article/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/article/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/article/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/article/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/article/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/article/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blog/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Blog/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,11 +35,14 @@
     </expand>
     <select />
   </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -53,7 +59,6 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
@@ -102,12 +107,18 @@
       <workItem from="1585452405645" duration="6582000" />
       <workItem from="1585540954128" duration="149000" />
       <workItem from="1585560752044" duration="7787000" />
-      <workItem from="1585728580167" duration="13025000" />
+      <workItem from="1585728580167" duration="14310000" />
+      <workItem from="1585802068452" duration="1174000" />
+      <workItem from="1586097047562" duration="1041000" />
+      <workItem from="1587127684893" duration="2926000" />
+      <workItem from="1587184349263" duration="4945000" />
+      <workItem from="1587296940481" duration="2391000" />
+      <workItem from="1588062182198" duration="11436000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="Vcs.Log.History.Properties">
     <option name="COLUMN_ORDER">
@@ -154,21 +165,22 @@
         </entry>
       </map>
     </option>
-    <option name="OPEN_TABS">
-      <set>
-        <option value="1" />
-      </set>
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="1" value="TOOL_WINDOW" />
+      </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add form U D" />
     <option name="LAST_COMMIT_MESSAGE" value="add form U D" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="693" y="204" width="524" height="495" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1585315464719">
+    <state x="693" y="204" width="524" height="495" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1587299008717">
       <screen x="0" y="0" width="1920" height="910" />
     </state>
-    <state x="693" y="204" width="524" height="495" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.910@0.0.1920.910" timestamp="1585315464719" />
+    <state x="693" y="204" width="524" height="495" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.910@0.0.1920.910" timestamp="1587299008717" />
     <state x="561" y="48" width="788" height="806" key="CommitChangelistDialog2" timestamp="1585494272509">
       <screen x="0" y="0" width="1920" height="910" />
     </state>
@@ -181,17 +193,22 @@
       <screen x="0" y="0" width="1920" height="910" />
     </state>
     <state x="100" y="99" width="1720" height="710" key="DiffContextDialog/0.0.1920.910@0.0.1920.910" timestamp="1585745730410" />
-    <state x="737" y="196" width="424" height="506" key="FileChooserDialogImpl" timestamp="1585541091072">
+    <state x="737" y="196" width="306" height="501" key="FileChooserDialogImpl" timestamp="1587299336284">
       <screen x="0" y="0" width="1920" height="910" />
     </state>
-    <state x="737" y="196" width="424" height="506" key="FileChooserDialogImpl/0.0.1920.910@0.0.1920.910" timestamp="1585541091072" />
+    <state x="737" y="196" width="424" height="506" key="FileChooserDialogImpl/0.0.1920.910@0.0.1920.910" timestamp="1587299336284" />
+    <state x="365" y="194" width="306" height="501" key="FileChooserDialogImpl/0.0.952.900@0.0.952.900" timestamp="1587211714269" />
     <state x="760" y="179" width="766" height="544" key="RollbackChangesDialog" timestamp="1585746014024">
       <screen x="0" y="0" width="1920" height="910" />
     </state>
     <state x="760" y="179" width="766" height="544" key="RollbackChangesDialog/0.0.1920.910@0.0.1920.910" timestamp="1585746014024" />
-    <state x="643" y="281" key="com.intellij.ide.util.TipDialog" timestamp="1585728588459">
+    <state x="643" y="281" key="com.intellij.ide.util.TipDialog" timestamp="1585802309812">
       <screen x="0" y="0" width="1920" height="910" />
     </state>
-    <state x="643" y="281" key="com.intellij.ide.util.TipDialog/0.0.1920.910@0.0.1920.910" timestamp="1585728588459" />
+    <state x="643" y="281" key="com.intellij.ide.util.TipDialog/0.0.1920.910@0.0.1920.910" timestamp="1585802309812" />
+    <state x="666" y="205" width="587" height="556" key="find.popup" timestamp="1587298206609">
+      <screen x="0" y="0" width="1920" height="910" />
+    </state>
+    <state x="666" y="205" width="587" height="556" key="find.popup/0.0.1920.910@0.0.1920.910" timestamp="1587298206609" />
   </component>
 </project>
