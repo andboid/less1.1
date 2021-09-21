@@ -1,5 +1,5 @@
 include:
-   - project: '/template'
+   - project: 'chumkaska1/template'
      ref: master
      file: template_build.yml
 
