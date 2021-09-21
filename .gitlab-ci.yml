@@ -4,6 +4,10 @@ services:
 stages:          
   - build
   - run
+.job_template: &job_run
+  script:
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+    - docker-compose up -d
 
 build-dev:     
   stage: build
@@ -46,9 +50,7 @@ run-compose-dev:
     - django_shell
   variables:
     IMAGE_WEB: dev
-  script:
-    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
-    - docker-compose up -d
+  <<: *job_run
   rules:
     - if: $CI_COMMIT_REF_NAME == 'dev'
 
@@ -59,8 +61,7 @@ run-compose-prod:
     - django_shell
   variables:
     IMAGE_WEB: prod
-  script:
-    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
-    - docker-compose up -d
+  <<: *job_run
   rules:
     - if: $CI_COMMIT_REF_NAME == 'master'
+  when: manual
