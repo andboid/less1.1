@@ -18,8 +18,8 @@ build-job:
     - ls -la
     - echo $CI_COMMIT_SHORT_SHA
     - echo $CI_REGISTRY_IMAGE
-    - docker build -t CI_REGISTRY_IMAGE:CI_COMMIT_SHORT_SHA .
-    - docker push CI_REGISTRY_IMAGE:CI_COMMIT_SHORT_SHA
+    - docker build -t $CI_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA .
+    - docker push $CI_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA
 
 build-job1:      
   stage: build
