@@ -1,4 +1,3 @@
-
 services:
   - docker:dind
 
@@ -6,7 +5,7 @@ stages:
   - build
   - run
 
-build-job:     
+build-dev:     
   stage: build
   image: docker:dind
   variables:
@@ -18,13 +17,50 @@ build-job:
     - django
   script:
     - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
-    - docker build -t $CI_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA .
-    - docker push $CI_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA
+    - docker build -t $CI_REGISTRY_IMAGE:dev_$CI_COMMIT_SHORT_SHA .
+    - docker push $CI_REGISTRY_IMAGE:dev_$CI_COMMIT_SHORT_SHA
+  rules:
+    - if: $CI_COMMIT_REF_NAME == 'dev'
 
-run-compose:      
+build-prod:     
+  stage: build
+  image: docker:dind
+  variables:
+    DOCKER_TLS_CERTDIR: "/certs"
+    DOCKER_HOST: tcp://docker:2376
+    DOCKER_TLS_VERIFY: 1
+    DOCKER_CERT_PATH: "$DOCKER_TLS_CERTDIR/client"
+  tags:
+    - django
+  script:
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+    - docker build -t $CI_REGISTRY_IMAGE:prod_$CI_COMMIT_SHORT_SHA .
+    - docker push $CI_REGISTRY_IMAGE:prod_$CI_COMMIT_SHORT_SHA
+  rules:
+    - if: $CI_COMMIT_REF_NAME == 'master'
+
+
+run-compose-dev:      
   stage: run
   tags:
     - django_shell
+  variables:
+    IMAGE_WEB: dev
   script:
     - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
     - docker-compose up -d
+  rules:
+    - if: $CI_COMMIT_REF_NAME == 'dev'
+
+
+run-compose-prod:      
+  stage: run
+  tags:
+    - django_shell
+  variables:
+    IMAGE_WEB: prod
+  script:
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+    - docker-compose up -d
+  rules:
+    - if: $CI_COMMIT_REF_NAME == 'master'
