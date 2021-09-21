@@ -44,7 +44,7 @@ build-prod:
     DOCKER_CERT_PATH: "$DOCKER_TLS_CERTDIR/client"
   tags:
     - django
-  extends: template_build
+  extends: .template_build
   rules:
     - if: $CI_COMMIT_REF_NAME == 'master'
 
