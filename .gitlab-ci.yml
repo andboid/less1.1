@@ -8,6 +8,7 @@ services:
 
 stages:          
   - build
+  - run
 
 build-job:     
   stage: build
@@ -19,11 +20,9 @@ build-job:
     - docker build -t $CI_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA .
     - docker push $CI_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA
 
-build-job1:      
-  stage: build
+run-compose:      
+  stage: run
   tags:
-    - django
+    - django_shell
   script:
-    - docker info
-    - echo "Compile complete."
-
+    - docker-compose up -d
