@@ -1,3 +1,9 @@
+include:
+   - project: '/template'
+     ref: master
+     file: template_build.yml
+
+
 services:
   - docker:dind
 
@@ -38,11 +44,7 @@ build-prod:
     DOCKER_CERT_PATH: "$DOCKER_TLS_CERTDIR/client"
   tags:
     - django
-  script:
-    - echo "e2eqwdqwdq" >> aaa
-  artifacts:
-    paths:
-      - aaa
+  extends: template_build
   rules:
     - if: $CI_COMMIT_REF_NAME == 'master'
 
