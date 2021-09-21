@@ -3,6 +3,7 @@ services:
 
 stages:          
   - build
+  - test
   - run
 .job_template: &job_run
   script:
@@ -26,6 +27,7 @@ build-dev:
   rules:
     - if: $CI_COMMIT_REF_NAME == 'dev'
 
+
 build-prod:     
   stage: build
   image: docker:dind
@@ -37,14 +39,15 @@ build-prod:
   tags:
     - django
   script:
-    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
-    - docker build -t $CI_REGISTRY_IMAGE:prod$CI_COMMIT_SHORT_SHA .
-    - docker push $CI_REGISTRY_IMAGE:prod$CI_COMMIT_SHORT_SHA
+    - echo "e2eqwdqwdq" >> 1
+  artifacts:
+    paths:
+      - 1
   rules:
     - if: $CI_COMMIT_REF_NAME == 'master'
 
 
-run-compose-dev:      
+run-compose-dev:     
   stage: run
   tags:
     - django_shell
@@ -56,12 +59,12 @@ run-compose-dev:
 
 
 run-compose-prod:      
-  stage: run
+  stage: test
   tags:
     - django_shell
   variables:
     IMAGE_WEB: prod
-  <<: *job_run
+  script:
+    - cat 1
   rules:
     - if: $CI_COMMIT_REF_NAME == 'master'
-      when: manual
