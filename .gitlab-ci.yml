@@ -39,10 +39,10 @@ build-prod:
   tags:
     - django
   script:
-    - echo "e2eqwdqwdq" >> 1
+    - echo "e2eqwdqwdq" >> aaa
   artifacts:
     paths:
-      - 1
+      - aaa
   rules:
     - if: $CI_COMMIT_REF_NAME == 'master'
 
@@ -65,6 +65,6 @@ run-compose-prod:
   variables:
     IMAGE_WEB: prod
   script:
-    - cat 1
+    - cat aaa
   rules:
     - if: $CI_COMMIT_REF_NAME == 'master'
